@@ -21,5 +21,20 @@ pipeline {
         }
 
      }
+    post {
+    always {
+        //this script will be done after the build is done
+            echo 'Cleaning up...'
+        }
 
+    success {
+        //this script will be done if the build is successful
+            echo 'Build was successful'
+        }
+
+    failure {
+        //this script will be done if the build is failed
+            echo 'Build failed'
+        }
+    }
  }

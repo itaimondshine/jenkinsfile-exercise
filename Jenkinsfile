@@ -2,15 +2,6 @@ def gv
 
 pipeline {
     agent any
-    environment {
-        DOCKER_REGISTRY = 'docker.io'
-        DOCKER_REGISTRY_CREDENTIALS = 'dockerhub'
-        DOCKER_IMAGE = 'techworld-js-docker-demo-app'
-        NEW_VERSION = '1.0.0'
-        SERVER_CREDENTIALS = credentials('server-credentials')
-    }
-
-
 
    stages {
 
@@ -21,9 +12,6 @@ pipeline {
                 }
             }
         }
-
-
-
 
         stage('Build') {
             steps {

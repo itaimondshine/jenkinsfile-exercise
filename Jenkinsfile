@@ -72,7 +72,18 @@ pipeline {
     docker { image 'node:16-alpine' }
   }
   stages {
+
+
     stage('Test') {
+
+    container('node:16-alpine') {
+        steps {
+            sh 'npm install'
+            sh 'npm test'
+        }
+
+    }
+
       steps {
         sh 'node --version'
       }

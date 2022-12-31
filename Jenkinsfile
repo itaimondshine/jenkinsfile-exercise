@@ -1,7 +1,8 @@
 pipeline {
   agent any
+
   environment {
-    AAA_TOP_LEVEL_VAR = 'topLevel'
+    DOCKER_CERT_PATH = '/Users/itaimondshine/.docker/machine/certs'
   }
   stages {
     stage('stage 1') {
@@ -27,3 +28,4 @@ pipeline {
     }
   }
 }
+

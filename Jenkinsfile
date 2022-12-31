@@ -6,10 +6,15 @@ pipeline {
   }
   stages {
     stage('stage 1') {
-      steps {
-        sh 'echo $AAA_TOP_LEVEL_VAR'
-        sh 'env | sort'
-      }
+
+    container('node') {
+        steps {
+            sh 'node -v'
+            sh 'npm -v'
+            sh 'npm install'
+            sh 'npm run build'
+        }
+
     }
     stage('stage 2') {
       environment {

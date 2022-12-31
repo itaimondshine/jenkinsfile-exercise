@@ -1,6 +1,6 @@
 pipeline {
     agent none
-    environment { DOCKER_CERT_PATH = '/Users/itaimondshine/.docker/machine/certs' }
+    environment { DOCKER_CERT_PATH = '/etc/ssl/certs' }
     stages {
         stage('Back-end') {
             agent {

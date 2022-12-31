@@ -15,6 +15,8 @@ pipeline {
             sh 'npm run build'
         }
 
+      }
+      
     }
     stage('stage 2') {
       environment {

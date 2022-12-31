@@ -11,8 +11,8 @@ pipeline {
             when{
                 expression {
                    BRANCH_NAME == 'master' || BRANCH_NAME == 'deveop'
-
                    }
+
                }
             steps {
                echo 'Testing...'
@@ -21,6 +21,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
+                echo GIT_COMMIT
 
            }
 

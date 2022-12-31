@@ -8,6 +8,11 @@ pipeline {
             }
         }
         stage('Test') {
+            when{
+                expression {
+                   BRANCH_NAME == 'dev' || BRANCH_NAME == 'develop'
+                   }
+               }
             steps {
                echo 'Testing...'
             }

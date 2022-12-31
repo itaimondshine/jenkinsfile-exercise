@@ -11,6 +11,7 @@ pipeline {
             when{
                 expression {
                    BRANCH_NAME == 'master' || BRANCH_NAME == 'develop'
+                   echo GIT_COMMIT
                    }
                }
             steps {
